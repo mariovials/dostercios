@@ -1,0 +1,656 @@
+/**
+ * Ficha
+ *
+ * La ficha es la unidad básica de presentaciÃƒÂ³n de informaciÃƒÂ³n
+ * Se debe procurar que todo de muestre dentro de una ficha
+ *
+ * <div class="ficha">
+ *  <div class="titulo">
+ *    <h2>Título</h2>
+ *    <ul class="opciones">
+ *      <li class="opcion">
+ *        <a href=""></a>
+ *      </li>
+ *    </ul>
+ *  </div>
+ *  <div class="datos">
+ *    <div class="fila">
+ *      <div class="campo">
+ *        <div class="label">
+ *        </div>
+ *        <div class="value">
+ *        </div>
+ *      </div>
+ *    </div>
+ *  </div>
+ * </div>
+ */
+.ficha {
+  width: 100%;
+  /*background: #F7F7F7;*/
+  margin: 0 0 1em;
+  /*border: 1px solid #E3E3E3;*/
+  /*border-top-color: #E3E3E3;*/
+  /*border-bottom-color: #E3E3E3;*/
+}
+.ficha:hover {
+  /*background: #F8F8F8;*/
+}
+.ficha > .titulo {
+}
+.ficha > .titulo > ul.opciones {
+  float: right;
+}
+.ficha > .titulo > ul.opciones > li {
+  color: #AAA;
+  display: inline;
+}
+.ficha > .titulo > ul.opciones > li.opcion {
+  padding: 0 0.5em;
+}
+.ficha > .titulo > ul.opciones > li.opcion > a {
+  font-size: 1em;
+  color: #AAA;
+}
+.ficha:hover div.titulo > ul.opciones > li.opcion > a {
+  color: #05A;
+}
+.ficha > .datos {
+}
+
+.form .set > .fila,
+.ficha > .datos > .fila {
+  margin: 1em;
+}
+.form .set .fila .campo,
+.ficha > .datos > .fila > .campo {
+  vertical-align: top;
+  display: inline-block;
+  margin: 0.5em 1em  0.5em 0;
+}
+.ficha > .datos > .fila > .campo > .value {
+  display: inline-block;
+}
+
+.ficha > .datos > .fila > .campo > .label,
+.form .set > .fila > .campo > .label > label,
+.lista.admin .item > div .label {
+  color: #000;
+  text-align: left;
+  padding: 0;
+  font-weight: bold;
+  font-family: 'Roboto Condensed', Tahoma, sans-serif;
+}
+.ficha > .datos > .fila > .campo > .value {
+  padding: 0.5em 0.5em;
+}
+.ficha > .datos > .fila.titulo {
+  padding: 0;
+  margin-bottom: 0.1em;
+}
+.ficha > .datos > .fila.titulo > .campo > .value {
+  margin: 0;
+  font-size: 1.5em;
+}
+.ficha > .datos > .fila.subtitulo {
+  margin-top: 0;
+  font-size: 0.9em;
+}
+.ficha > .datos > .fila.subtitulo > .campo > .value {
+  margin-left: 0.4em;
+  color: #AAA;
+}
+.ficha .datos .fila.descripcion .label,
+.ficha .datos .fila.subtitulo .label,
+.ficha .datos .fila.titulo .label {
+  display: none;
+}
+
+/** Lineal */
+.ficha.lineal > .datos > .fila > .campo,
+.ficha > .datos > .fila.lineal > .campo,
+.ficha > .datos > .fila > .campo.lineal {
+  display: inline-block;
+  margin: 0 1.5em 0 0;
+  width: inherit;
+  width: initial;
+  vertical-align: baseline;
+}
+
+/**
+ * Ficha dentro de ficha
+ */
+.ficha > .datos > .fila > .ficha {
+  border: 0;
+  margin: 0;
+}
+.ficha > .datos > .fila > .ficha > .titulo {
+  padding: 0 0.2em;
+  border: 0;
+  background: none;
+}
+.ficha > .datos > .fila > .ficha > .titulo > h2 {
+  font-size: 1em;
+  font-weight: 600;
+  display: inline-block;
+}
+.ficha > .datos > .fila > .ficha > .fila {
+  margin-top: 0;
+}
+.ficha > .datos > .fila > .ficha > .datos {
+  margin: 0;
+  border: 0;
+}
+.ficha > .datos > .fila > .ficha > .titulo > .opciones {
+  display: inline-block;
+  float: none;
+  line-height: 1em;
+}
+.ficha:hover .ficha > .titulo > ul.opciones {
+  display: inline-block;
+}
+.ficha .ficha > .titulo > ul.opciones > li.opcion a {
+  color: #CCC;
+}
+.ficha > .datos > .fila > .ficha .datos .fila > .campo > .label {
+  font-size: 1.1em;
+  font-weight: normal;
+  color: #9E9E9E;
+}
+.ficha > .datos > .fila > .ficha .datos {
+  margin: 0;
+  padding: 0;
+}
+.ficha > .datos > .fila > .ficha .datos .fila {
+  margin: 0.1em 0.2em;
+}
+
+/**
+ * LISTAS
+ */
+.lista .item {
+  float: left;
+  padding: 0;
+  border: 1px solid #E7E7F0;
+  width: calc(100% - 2px);
+  background: #F7F7F7;
+  margin-bottom: .5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lista .campo.doble .campo .label {
+  display: inline;
+  color: #777;
+  font-weight: normal;
+}
+.lista .label {
+  color: #777;
+  font-size: 0.9em;
+}
+.lista  .informacion {
+  float: left;
+  width: 85%;
+}
+.lista  .informacion .info {
+  float: right;
+  margin: 0 1em;
+  color: #777;
+}
+.lista .informacion .campo {
+  display: inline-block;
+  line-height: 1.3em;
+  margin-left: 0.5em;
+  padding: 0.8em 0;
+  vertical-align: middle;
+}
+.lista .item,
+.lista .detalle a {
+  min-height: 3em;
+  line-height: 3em;
+}
+.lista .detalle a {
+  float: left;
+  width: 15%;
+  text-align: center;
+  background: #EEF;
+  text-decoration: none;
+}
+.lista .detalle > a:hover {
+  background: #DDF;
+}
+.lista .items > .item > .campo {
+  display: inline-block;
+  margin: 0 1em 0 0;
+}
+.lista.grande .item {
+  min-height: 4em;
+  line-height: 4em;
+}
+.lista .item .campo.doble {
+  padding: 0;
+  margin: 0;
+}
+.lista .item .campo.doble .campo {
+  display: block;
+  font-size: 0.9em;
+  padding: 0.2em;
+}
+.lista .item .doble.chica {
+  line-height: 1.3em;
+  padding: 0.45em 0;
+}
+.lista .item .doble.chica {
+  line-height: 1.3em;
+  padding: 0.45em 0;
+}
+.lista .campo.doble .label {
+  font-size: 1em;
+}
+.lista.grande .campo.foto {
+  height: 4em;
+  width: 4.1em;
+  margin-right: 1em;
+}
+.lista.tabla .campo.foto {
+  padding-right: 1em;
+}
+.lista .items > .item > .campo.check {
+  width: 1em;
+  padding: 0 0.4em 0 0.7em;
+  vertical-align: bottom;
+  margin: 0;
+}
+.lista.tabla .list-view .items {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+.lista.tabla .list-view .items .item {
+  display: table-row;
+  width: 100%;
+  float: none;
+  border: 1px solid #DDD;
+}
+.lista.tabla .list-view .items .item .campo {
+  display: table-cell;
+}
+.lista.grande .item {
+  min-height: 4em;
+  line-height: 4em;
+}
+.lista.grande .campo.foto {
+  height: 4em;
+  width: 4.1em;
+  margin-right: 1em;
+}
+.lista.tabla .campo.foto {
+  padding-right: 1em;
+}
+.lista .items > .item > .campo.check {
+  width: 1em;
+  padding: 0 0.4em 0 0.7em;
+  vertical-align: bottom;
+  margin: 0;
+}
+
+/**
+ * Form
+ */
+
+/* FORMULARIO {{{ */
+form input[type="radio"],
+form input[type="checkbox"] {
+  vertical-align: text-bottom;
+}
+.form {
+  width: 100%;
+}
+.form input.confirmar {
+  border: 1px solid #000;
+  background-color: #000;
+}
+.form input.eliminar,
+.form input.confirmar {
+  color: #EEE;
+}
+.form input.confirmar:active {
+}
+.form input.eliminar {
+  background: #B11;
+}
+.form input.eliminar:hover {
+  background: #B11;
+}
+.form input.eliminar:active {
+  background: #FAA;
+}
+.form input.confirmar:hover,
+.form input.eliminar:hover {
+}
+.form input.confirmar:active,
+.form input.eliminar:active {
+}
+
+.form .set.blanco {
+  background: #FFF;
+  border: none;
+  margin: 0;
+  margin-top: 0.5em;
+}
+.form .set.blanco input,
+.form .set.blanco label {
+  padding: 1em 0;
+}
+.form .set.blanco label {
+  font-weight: bold;
+}
+.form .suggestion,
+.form .description {
+  font-size: .8em;
+  color: #777;
+}
+.form .botones > * {
+  background: #DDD;
+  border-radius: 0.2em;
+  border: 1px solid #CCC;
+  color: #000;
+  display: inline-block;
+  float: left;
+  font-family: 'Roboto Condensed';
+  font-size: 1em;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.4em;
+  margin: 0 0.5em;
+  padding: 5px 1em;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: top;
+  /* font-size: 1em; */
+}
+.form .botones > *:hover {
+  background: #EEE;
+  box-shadow: 0em 0.1em 0em 0em rgba(255, 255, 255, 0.3) inset,
+    0em 0.1em 1em 0.1em rgba(255, 255, 255, 0.1) inset;
+}
+.form .botones > *:active {
+  box-shadow: 0em 0.1em 0em 0em rgba(0, 0, 0, 0.1) inset,
+    0em 0.1em 1em 0.1em rgba(0, 0, 0, 0.05) inset;
+}
+
+.form .fila .campo input,
+.form .fila .campo select,
+.form .fila .campo textarea {
+  border: 1px solid #AAA;
+}
+.form .fila .campo input[type=file] {
+  border: 0;
+}
+.form .fila .campo input[type=text]:hover,
+.form .fila .campo input[type=password]:hover,
+.form .fila .campo select:hover,
+.form .fila .campo textarea:hover {
+  /*border-color: #CCC;*/
+}
+.form .fila .campo input:focus,
+.form .fila .campo select:focus,
+.form .fila .campo textarea:focus,
+.form .fila .campo input:active,
+.form .fila .campo select:active,
+.form .fila .campo textarea:active {
+  border-color: #77B;
+  border-bottom-color: #66C;
+}
+.form .fila .campo input.error,
+.form .fila .campo select.error,
+.form .fila .campo textarea.error {
+  background: #FEE;
+  border-color: #ECC;
+}
+
+.form span.required,
+.form .fila div.error,
+.form .campo .label label.error,
+.form .fila .campo > div.error {
+  color: #B00;
+}
+.form .fila .campo > div.error {
+  font-size: 0.9em;
+  margin-top: 0.1em;
+}
+.form span.required {
+  font-family: Verdana;
+  font-weight: bold;
+}
+
+.errorSummary {
+  margin: 1em;
+  padding: 1em 1em;
+  background: #FEE;
+  border: 1px solid #ECC;
+}
+.errorSummary ul {
+  padding: 1em 2em 0em;
+}
+
+.form .botones {
+  clear: both;
+  float: left;
+  padding: 1em 5%;
+}
+
+.form .note {
+  padding: .5em;
+}
+
+.link-form {
+  margin: 0.5em;
+}
+
+ /* oficial */
+.form .set {
+  /*background: #F7F7F7;*/
+  /*border: 1px solid #E3E3E3;*/
+  float: left;
+  margin-bottom: 0.5em;
+  padding-bottom: 1em;
+  width: 100%;
+}
+ /* oficial */
+.ficha > .titulo > h2,
+.form .set > h2 {
+  /*background: #EEE;*/
+  /*border-bottom: 1px solid #E7E7E7;*/
+  clear: both;
+  line-height: 1.4em;
+  display: block;
+  margin: 0;
+  font-weight: 900;
+  font-size: 1.2em;
+  padding: 0.5em;
+  letter-spacing: -0.03em;
+}
+
+.form .campo input[type=checkbox] + label {
+  padding: 0.5em 0 0 0.3em;
+  display: inline-block;
+}
+
+.ficha.lineal .fila .campo .label,
+.ficha .fila.lineal .campo .label,
+.ficha .fila .campo.lineal .label,
+.form.lineal .fila .campo .label,
+.form .fila.lineal .campo .label,
+.form .fila .campo.lineal .label {
+  display: inline-block;
+  margin: 0 0.0em;
+  padding-right: 0;
+}
+.form.lineal .fila .campo,
+.form .fila.lineal .campo,
+.form .fila .campo.lineal {
+  display: inline-block;
+  margin: 0 1.5em 0 0;
+  width: inherit;
+  width: initial;
+  vertical-align: baseline;
+}
+.form.lineal .ficha .fila .campo,
+.form .ficha .fila.lineal .campo,
+.form .ficha .fila .campo.lineal {
+  margin-top: 0.2em;
+  margin-bottom: 0.1em;
+  margin-right: 2em;
+}
+/* FORMULARIO }}} */
+
+.campo.grande {
+  margin: 0;
+}
+.campo.grande textarea {
+  width: 100%;
+}
+.form .campo.grande input[type="text"] {
+  width: 100%;
+  font-size: 1.5em;
+}
+.form .campo.grande .label {
+  /*display: none;*/
+}
+.seccion.doble .ficha .campo,
+.campo.grande {
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+.ficha .fila .campo.grande .value {
+  width: 100%;
+}
+.seccion.doble .ficha .campo .label,
+.campo.grande .label,
+.campo.grande .value .label {
+  padding-bottom: 0;
+}
+.lista .item > div {
+  vertical-align: top;
+}
+.ficha > .fila.descripcion {
+  margin-top: 0;
+}
+.seccion .ficha > .fila.titulo {
+  border-bottom: 0;
+}
+.ficha .fila h3 {
+  color: #05A;
+}
+.ficha .fila.foto.mini {
+  float: left;
+}
+.ficha .fila.foto.mini .campo.foto {
+  display: inline-block;
+  float: left;
+}
+.ficha .fila.foto.mini .campo.foto .value {
+  width: 6em;
+  height: 6em;
+}
+.ficha .fila.foto.mini .campo.foto .value img {
+  width: 100%;
+}
+/**
+ * Ficha relacionada
+ */
+.ficha.relacionada {
+  background: none;
+  border: 0;
+  width: 100%;
+}
+.ficha.relacionada .titulo {
+  background: none;
+}
+.ficha.relacionada .titulo h2 {
+  font-size: 1.25em;
+  color: initial;
+}
+.ficha.relacionada .opciones .opcion a {
+  color: initial;
+  vertical-align: sub;
+}
+.ficha.relacionada:hover .opciones .opcion a {
+  color: initial;
+}
+
+
+
+/**
+ * Ficha horizontal
+ */
+.seccion.horizontal .fichas .ficha,
+.fichas.horizontal .ficha,
+.ficha.horizontal {
+}
+.seccion.horizontal .fichas .ficha .datos .fila,
+.fichas.horizontal .ficha .datos .fila,
+.ficha.horizontal .datos .fila {
+}
+.seccion.horizontal .fichas .ficha .datos .fila .campo,
+.fichas.horizontal .ficha .datos .fila .campo,
+.ficha.horizontal .datos .fila .campo {
+}
+.seccion.horizontal .fichas .ficha .datos .fila .campo .label,
+.fichas.horizontal .ficha .datos .fila .campo .label,
+.seccion.horizontal .fichas .ficha .datos .fila .campo .value,
+.fichas.horizontal .ficha .datos .fila .campo .value,
+.ficha.horizontal .datos .fila .campo .label,
+.ficha.horizontal .datos .fila .campo .value {
+  display: inline-block;
+}
+.seccion.horizontal .fichas .ficha .datos .fila .campo .value,
+.fichas.horizontal .ficha .datos .fila .campo .value,
+.ficha.horizontal .datos .fila .campo .value {
+}
+.seccion.horizontal .fichas .ficha .datos .fila .campo .label ,
+.fichas.horizontal .ficha .datos .fila .campo .label ,
+.ficha.horizontal .datos .fila .campo .label {
+}
+
+
+/**
+ * Yii
+ */
+.list-view .pager {
+  clear: both;
+}
+.grid-view .pager,
+.list-view .pager,
+.grid-view .summary,
+.list-view .summary {
+  font-size: 0.9em;
+  color: #777;
+}
+
+/**
+ * Varios
+ */
+.oculto {
+  display: none;
+}
+.negrita {
+  font-weight: bold;
+}
+div.clear {
+  clear: both;
+}
+
+/**
+ * Revisar
+ */
+/* .lista .campo.foto {
+  width: 3.1em;
+  height: 3em;
+  margin-right: 0.5em;
+}
+.lista .campo.foto img {
+  width: 100%;
+  vertical-align: top;
+} */

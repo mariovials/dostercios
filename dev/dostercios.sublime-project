@@ -1,0 +1,31 @@
+{
+  "folders":
+  [
+    {
+      "path": "..",
+      "name": "Base",
+      "folder_exclude_patterns": ["config", "doc", "db", "dev", "src"]
+    },
+    {
+      "path": "../config",
+      "name": "Configuración",
+    },
+    {
+      "path": "../doc",
+      "name": "Documentación",
+    },
+    {
+      "path": "../db",
+      "name": "Base de Datos",
+    },
+    {
+      "path": "../dev",
+      "name": "Desarrollo",
+      "folder_exclude_patterns": ["backup"]
+    },
+    {
+      "path": "../src/www",
+      "name": "Sistema",
+    },
+  ]
+}

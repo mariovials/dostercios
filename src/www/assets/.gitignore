@@ -1,0 +1,5 @@
+# Ignorar todos los archivos de la carpeta
+*
+
+# Excepto este gitignore, para que la carpeta sea trackeada por git
+!.gitignore
