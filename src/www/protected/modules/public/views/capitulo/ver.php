@@ -43,13 +43,19 @@
     </header>
 
     <div id="capitulos-serie">
+
       <?php
-      $capitulo = $model->anterior;
-      if ($capitulo) {
+      $capitulosSiguientes = $model->getSiguientes(3);
+      $cantidad = count($capitulosSiguientes);
+      $diferencia = 3 - $cantidad;
+      foreach ($capitulosSiguientes as $capitulo) {
       ?>
       <div class="item entrevista proporcion8-5" style="background-image: url('<?php echo $capitulo->pathFileAttribute('miniatura') ?>'); ">
         <a href="<?php echo $capitulo->url() ?>" class="contenido">
           <div class="textos">
+            <div class="tipo">
+              Capítulo <?php echo $capitulo->orden; ?>
+            </div>
             <div class="titulo">
               <?php echo $capitulo->titulo ?>
             </div>
@@ -61,29 +67,19 @@
       </div>
       <?php
       }
-      $capitulo = $model->siguiente;
-      if ($capitulo) {
+      $capitulosSiguientes = $model->findAll(array(
+          'condition'=>"serie_id = {$model->serie_id}",
+          'limit' => $diferencia,
+          'order'=>'orden'
+      ));
+      foreach ($capitulosSiguientes as $capitulo) {
       ?>
       <div class="item entrevista proporcion8-5" style="background-image: url('<?php echo $capitulo->pathFileAttribute('miniatura') ?>'); ">
         <a href="<?php echo $capitulo->url() ?>" class="contenido">
           <div class="textos">
-            <div class="titulo">
-              <?php echo $capitulo->titulo ?>
+            <div class="tipo">
+              Capítulo <?php echo $capitulo->orden; ?>
             </div>
-            <div class="texto">
-              <?php echo $capitulo->resumen ?>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <?php
-        $capitulo = $capitulo->siguiente;
-        if($capitulo) {
-      ?>
-      <div class="item entrevista proporcion8-5" style="background-image: url('<?php echo $capitulo->pathFileAttribute('miniatura') ?>'); ">
-        <a href="<?php echo $capitulo->url() ?>" class="contenido">
-          <div class="textos">
             <div class="titulo">
               <?php echo $capitulo->titulo ?>
             </div>
@@ -94,27 +90,9 @@
         </a>
       </div>
       <?php
-
-          if (!$model->anterior && $capitulo->siguiente) {
-            $capitulo = $capitulo->siguiente;
-      ?>
-      <div class="item entrevista proporcion8-5" style="background-image: url('<?php echo $capitulo->pathFileAttribute('miniatura') ?>'); ">
-        <a href="<?php echo $capitulo->url() ?>" class="contenido">
-          <div class="textos">
-            <div class="titulo">
-              <?php echo $capitulo->titulo ?>
-            </div>
-            <div class="texto">
-              <?php echo $capitulo->resumen ?>
-            </div>
-          </div>
-        </a>
-      </div>
-      <?php
-          }
-        }
       }
       ?>
+
 
     </div>
 

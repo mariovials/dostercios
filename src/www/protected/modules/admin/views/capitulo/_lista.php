@@ -17,6 +17,9 @@
     <div class="campo link">
       <?php echo $data->link(); ?>
     </div>
+    <div class="campo orden " style=": ">
+        <?php echo $data->orden; ?>
+    </div>
   </div>
 
   <div class="opciones">

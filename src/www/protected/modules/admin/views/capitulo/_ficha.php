@@ -30,6 +30,12 @@ $this->cargar_jquery();
         <div class="value"><?php echo $model->serie->link(); ?></div>
       </div>
       <?php endif; ?>
+      <?php if(in_array('orden', $campos)): ?>
+      <div class="campo orden">
+        <div class="label"><?php echo $model->getAttributeLabel('orden'); ?></div>
+        <div class="value"><?php echo $model->orden; ?></div>
+      </div>
+      <?php endif; ?>
     </div>
 
     <div class="fila">

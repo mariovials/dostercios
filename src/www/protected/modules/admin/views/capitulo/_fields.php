@@ -61,6 +61,20 @@ $this->cargar_js('capitulo.js');
   </div>
 
   <div class="fila">
+    <div class="campo orden">
+      <div class="label">
+      <?php echo $form->labelEx($model, 'orden'); ?>
+      </div>
+      <?php echo $form->description($model, 'orden'); ?>
+      <div class="value">
+      <?php echo $form->textField($model, 'orden'); ?>
+      </div>
+      <?php echo $form->suggestion($model, 'orden'); ?>
+      <?php echo $form->error($model, 'orden'); ?>
+    </div>
+  </div>
+
+  <div class="fila">
 
     <?php if(in_array('texto', $attributes)): ?>
     <div class="campo texto grande">

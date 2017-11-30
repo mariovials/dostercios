@@ -48,6 +48,7 @@ $this->menu = array(
         'miniatura',
         'resumen',
         'imagenes',
+        'orden',
       ),
     )); ?>
 

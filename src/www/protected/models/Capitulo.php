@@ -53,6 +53,7 @@ class Capitulo extends DTActiveRecord {
       array('serie_id, titulo', 'required'),
       array('portada','numerical', 'integerOnly'=>true, 'min'=>0, 'max'=>2),
       array('serie_id', 'numerical', 'integerOnly'=>true),
+      array('orden', 'numerical', 'integerOnly'=>true),
       array('titulo, video, miniatura', 'length', 'max'=>2000),
       array('url, texto, resumen, fecha_publicacion, transaccion', 'safe'),
       // The following rule is used by search().
@@ -249,6 +250,16 @@ class Capitulo extends DTActiveRecord {
       'order'=>'id ASC'
     ));
     return ($siguiente) ? $siguiente : null;
+  }
+
+  public function getSiguientes($cantidad = null)
+  {
+    $siguientes = $this->findAll(array(
+      'condition'=>"orden > {$this->orden} AND serie_id = {$this->serie_id}",
+      'limit' => $cantidad,
+      'order'=>'orden ASC, id ASC'
+    ));
+    return ($siguientes) ? $siguientes : [];
   }
 
   public function getTipoMiniatura()
