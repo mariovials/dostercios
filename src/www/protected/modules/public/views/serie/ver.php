@@ -5,7 +5,7 @@
     <div id="portada-serie">
       <img src="<?php echo $model->pathFileAttribute('imagen') ?>" alt="">
       <h1 class="titulo"><?php echo $model->titulo ?></h1>
-      <?php echo $this->renderPartial('/layouts/_social', array(
+      <?php echo $this->renderPartial('/layouts/_social_compartir', array(
         'titulo' => $model->titulo
       )); ?>
     </div>

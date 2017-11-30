@@ -4,7 +4,7 @@
 
     <header>
       <h1><?php echo $model->titulo ?></h1>
-      <?php echo $this->renderPartial('/layouts/_social', array(
+      <?php echo $this->renderPartial('/layouts/_social_compartir', array(
         'titulo' => $model->titulo
       )); ?>
     </header>

@@ -13,8 +13,7 @@ ini_set('max_input_time', '2000');
 date_default_timezone_set("Chile/Continental");
 
 $yii    = dirname(__FILE__) . '/../lib/yii/framework/yii.php';
-$config = dirname(__FILE__) . '/protected/config/main.php';
-
+$config = dirname(__FILE__) . '/protected/config/leu.php';
 
 require_once($yii);
 Yii::createWebApplication($config)->run();

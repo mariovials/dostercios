@@ -27,9 +27,8 @@ Yii::app()->clientScript->registerCoreScript('slick');
     </div>
     <?php } ?>
 
-    <?php echo $this->renderPartial('/layouts/_social', array(
-      'titulo' => Parametro::get('nombre')
-    )); ?>
+    <?php echo $this->renderPartial('/layouts/_social'); ?>
+
   </div>
   <section>
     <div id="de-todo">

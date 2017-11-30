@@ -578,16 +578,31 @@ aside.relacionados {
 .encabezado.video-portada #zona-social {
   bottom: 6em;
 }
+#portada-sobre #zona-social {
+  position: relative;
+  float: right;
+  bottom: 9.2em;
+  right: 5%;
+}
+#sitio-inicio #zona-social {
+  right: 5%;
+  bottom: 6em;
+}
+#sitio-inicio #zona-social a,
+#portada-sobre #zona-social a {
+  width: 3em;
+  height: 3em;
+}
 #zona-social {
   position: relative;
   float: right;
-  bottom: 3.4em;
+  bottom: 3.7em;
   right: 0;
 }
 #zona-social a {
-  background-color: rgba(170, 170, 170, 0.5);
-  width: 2em;
-  height: 2em;
+  background-color: rgba(100, 100, 100, 0.5);
+  width: 2.5em;
+  height: 2.5em;
   display: inline-block;
   background-size: 70%;
   background-repeat: no-repeat;
@@ -615,6 +630,9 @@ aside.relacionados {
 }
 #zona-social a.pinterest {
   background-image: url(../img/iconos/pinterest_i.png);
+}
+#zona-social a.instagram {
+  background-image: url(../img/iconos/instagram.png);
 }
 
 #auspiciadores {
@@ -909,10 +927,6 @@ ul#menu li {
   background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 75%, rgba(255,255,255,1) 100%);
   background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 75%, rgba(255,255,255,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 );
-}
-
-#sitio-inicio #zona-social {
-  right: 5%;
 }
 
 /* Descargas */

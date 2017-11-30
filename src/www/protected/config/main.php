@@ -170,9 +170,9 @@ return array(
     ),
 
     'db'=>array(
-      'connectionString'=>"pgsql:host=localhost;port=5432;dbname=dostercios",
-      'username'=>'postgres',
-      'password'=>'',
+      'connectionString'=>"pgsql:host=localhost;port=5432;dbname=dosterci_os",
+      'username'=>'dosterci',
+      'password'=>'Q1qiGb2m38',
       'charset'=>'utf8',
       'enableParamLogging'=>true,
     ),

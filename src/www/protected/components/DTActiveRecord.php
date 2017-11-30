@@ -232,7 +232,11 @@ class DTActiveRecord extends ActiveRecord {
         $models[] = $model::model()->findByPk($r['entidad_id']);
       }
     } else {
-      $models = $this->findAll(array('limit' => '3'));
+      $models = $this->findAll(array(
+        'limit' => '3',
+        'condition' => "id <> $this->id",
+        'order' => 'fecha_edicion',
+      ));
     }
 
     return $models;

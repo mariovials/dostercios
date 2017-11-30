@@ -23,7 +23,6 @@ class Entrevista extends DTActiveRecord {
   protected $transaccion;
 
   protected $_puede_ir_en_portada = true;
-
   protected $_tiene_etiquetas = true;
 
   public $eliminarMiniatura = false;

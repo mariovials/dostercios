@@ -4,7 +4,9 @@
     <img src="<?php echo BASE_URL . "/img/dostercios/sobre_" . rand(1,3) . ".png"; ?>" alt="">
 
     <h1 class="titulo"><?php echo Parametro::get('nombre') ?></h1>
+    <?php echo $this->renderPartial('/layouts/_social'); ?>
   </div>
+
 
   <div class="wraper">
 
