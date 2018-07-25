@@ -303,7 +303,7 @@ class Capitulo extends DTActiveRecord {
   public function defaultScope()
   {
     return array(
-      'order' => 'fecha_publicacion DESC',
+      'order' => 'orden, fecha_publicacion DESC',
     );
   }
 

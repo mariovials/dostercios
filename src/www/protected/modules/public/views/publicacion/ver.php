@@ -28,6 +28,39 @@
     </div>
 
     <div class="texto-simple">
+      <?php if ($model->autor): ?>
+        <b><?php echo $model->getAttributeLabel('autor') ?></b>:
+        <?php echo $model->autor ?>
+        <br>
+      <?php endif; ?>
+      <?php if ($model->isbn): ?>
+        <b><?php echo $model->getAttributeLabel('isbn') ?></b>:
+        <?php echo $model->isbn ?>
+        <br>
+      <?php endif; ?>
+      <?php if ($model->anio): ?>
+        <b><?php echo $model->getAttributeLabel('anio') ?></b>:
+        <?php echo $model->anio ?>
+        <br>
+      <?php endif; ?>
+      <?php if ($model->editorial): ?>
+        <b><?php echo $model->getAttributeLabel('editorial') ?></b>:
+        <?php echo $model->editorial ?>
+        <br>
+      <?php endif; ?>
+      <?php if ($model->idioma): ?>
+        <b><?php echo $model->getAttributeLabel('idioma') ?></b>:
+        <?php echo $model->idioma ?>
+        <br>
+      <?php endif; ?>
+      <?php if ($model->diseno): ?>
+        <b><?php echo $model->getAttributeLabel('diseno') ?></b>:
+        <?php echo $model->diseno ?>
+        <br>
+      <?php endif; ?>
+    </div>
+
+    <div class="texto-simple">
       <?php echo $model->informacion ?>
     </div>
 

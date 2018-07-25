@@ -1,7 +1,7 @@
 <script>
   var baseUrl = '<?php echo BASE_URL ?>';
 </script>
-<header id="header">
+<header id="header" class="<?php echo Parametro::get('fondo_encabezado') ?>">
   <nav>
     <button id="menu-icon">
       <span class="icon">

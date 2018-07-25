@@ -58,7 +58,7 @@ if(!isset($campos))
       <?php if(in_array('descripcion', $campos)): ?>
       <div class="campo descripcion">
         <div class="label"><?php echo $model->getAttributeLabel('descripcion'); ?></div>
-        <div class="value"><?php echo $model->descripcion; ?></div>
+        <div class="value"><?php echo nl2br($model->descripcion); ?></div>
       </div>
       <?php endif; ?>
     </div>

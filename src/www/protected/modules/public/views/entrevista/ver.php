@@ -39,7 +39,8 @@
       <h2>Relacionados</h2>
     </header>
 
-    <?php foreach ($model->relacionadas as $entrevista) { ?>
+    <?php foreach ($model->relacionadas as $entrevista) {
+      if ($entrevista == null) continue; ?>
     <div class="item entrevista proporcion8-5" style="background-image: url('<?php echo $entrevista->pathFileAttribute('miniatura') ?>'); ">
       <a href="<?php echo $entrevista->url() ?>" class="contenido">
         <div class="textos">

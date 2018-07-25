@@ -60,6 +60,12 @@ $this->menu = array(
         'fecha_edicion',
         'miniatura',
         'url',
+        'autor',
+        'isbn',
+        'anio',
+        'editorial',
+        'idioma',
+        'diseno',
 
         'etiquetas',
         'descargas',

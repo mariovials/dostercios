@@ -6,12 +6,20 @@
 <div class="item">
 
   <div class="informacion">
-    <div class="campo fecha_publicacion doble" style="float: right">
+    <div class="campo fecha_edicion doble" style="float: right">
       <div class="campo label">
         <?php echo $data->getAttributeLabel('fecha_edicion') ?>
       </div>
       <div class="campo">
         <?php echo CHtml::encode($data->fecha_edicion); ?>
+      </div>
+    </div>
+    <div class="campo fecha_publicacion doble" style="float: right">
+      <div class="campo label">
+        <?php echo $data->getAttributeLabel('fecha_publicacion') ?>
+      </div>
+      <div class="campo">
+        <?php echo CHtml::encode($data->fecha_publicacion); ?>
       </div>
     </div>
     <div class="campo link">

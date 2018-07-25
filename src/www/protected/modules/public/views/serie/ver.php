@@ -19,7 +19,7 @@
         <a href="<?php echo $capitulo->url() ?>" class="contenido">
           <div class="textos">
             <div class="tipo">
-              <?php echo $capitulo->modelName ?>
+              Capítulo <?php echo $capitulo->orden ?>
             </div>
             <div class="titulo">
               <?php echo $capitulo->titulo ?>

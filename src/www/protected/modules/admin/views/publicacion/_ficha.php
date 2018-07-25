@@ -97,6 +97,45 @@ if(!isset($campos))
     </div>
 
     <div class="fila">
+      <?php if(in_array('autor', $campos) && $model->autor): ?>
+      <div class="campo autor">
+        <div class="label"><?php echo $model->getAttributeLabel('autor'); ?></div>
+        <div class="value"><?php echo $model->autor; ?></div>
+      </div>
+      <?php endif; ?>
+      <?php if(in_array('isbn', $campos) && $model->isbn): ?>
+      <div class="campo isbn">
+        <div class="label"><?php echo $model->getAttributeLabel('isbn'); ?></div>
+        <div class="value"><?php echo $model->isbn; ?></div>
+      </div>
+      <?php endif; ?>
+      <?php if(in_array('anio', $campos) && $model->anio): ?>
+      <div class="campo anio">
+        <div class="label"><?php echo $model->getAttributeLabel('anio'); ?></div>
+        <div class="value"><?php echo $model->anio; ?></div>
+      </div>
+      <?php endif; ?>
+      <?php if(in_array('editorial', $campos) && $model->editorial): ?>
+      <div class="campo editorial">
+        <div class="label"><?php echo $model->getAttributeLabel('editorial'); ?></div>
+        <div class="value"><?php echo $model->editorial; ?></div>
+      </div>
+      <?php endif; ?>
+      <?php if(in_array('idioma', $campos) && $model->idioma): ?>
+      <div class="campo idioma">
+        <div class="label"><?php echo $model->getAttributeLabel('idioma'); ?></div>
+        <div class="value"><?php echo $model->idioma; ?></div>
+      </div>
+      <?php endif; ?>
+      <?php if(in_array('diseno', $campos) && $model->diseno): ?>
+      <div class="campo diseno">
+        <div class="label"><?php echo $model->getAttributeLabel('diseno'); ?></div>
+        <div class="value"><?php echo $model->diseno; ?></div>
+      </div>
+      <?php endif; ?>
+    </div>
+
+    <div class="fila">
       <?php if(in_array('informacion', $campos)): ?>
       <div class="campo informacion">
         <div class="label"><?php echo $model->getAttributeLabel('informacion'); ?></div>

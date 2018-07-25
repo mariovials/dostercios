@@ -38,6 +38,12 @@ $this->menu = array(
         'miniatura',
         'resumen_miniatura',
         'url',
+        'autor',
+        'isbn',
+        'anio',
+        'editorial',
+        'idioma',
+        'diseno',
       ),
     )); ?>
 

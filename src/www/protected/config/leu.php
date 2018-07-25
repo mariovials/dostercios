@@ -144,27 +144,24 @@ return array(
       'showScriptName'=>false,
       'rules'=>array(
 
+
         '/inicio' => '/public',
 
         '/serie/<serie:[0-9a-zA-Z_\-]+>/<url:[0-9a-zA-Z_\-]+>' => 'public/capitulo/ver',
 
-        '/admin/<controller:entrevista>/<action:cargarImagenes>/<id:\w+>' => '/admin/<controller>/<action>',
-        '/admin/<controller:noticia>/<action:cargarImagenes>/<id:\w+>' => '/admin/<controller>/<action>',
+        '<controller:entrevista>/<action:cargarImagenes>/<id:\w+>' => '<controller>/<action>',
 
-        '/entrevistas'=>'/public/entrevista',
-        '/series'=>'/public/serie',
+        '/entrevistas'=>'/public/sitio/entrevistas',
+        '/series'=>'/public/sitio/series',
+        '/publicaciones'=>'/public/sitio/publicaciones',
         '/sobre'=>'/public/sitio/sobre',
-        '/noticias'=>'/public/noticia',
-        '/producciones'=>'/public/produccion',
-        '/editorial'=>'/public/publicacion',
-
-        // '/publicaciones'=>'/public/publicaciones',
 
         '<module>/<controller:[0-9a-zA-Z_\-]+>/<id:\d+>' => '<module>/<controller>/ver',
         '<module>/<controller:[0-9a-zA-Z_\-]+>/<action:[0-9a-zA-Z_\-]+>/<id:\d+>' => '<module>/<controller>/<action>',
         '<module>/<controller:[0-9a-zA-Z_\-]+>/<action:[0-9a-zA-Z_\-]+>' => '<module>/<controller>/<action>',
 
-        '<controller:(entrevista|serie|noticia|produccion|publicacion)>/<url:[0-9a-zA-Z_\-]+>' => 'public/<controller>/ver',
+        // '/serie/<serie:[0-9a-zA-Z_\-]+>/capitulo/<url:[0-9a-zA-Z_\-]+>' => 'public/capitulo/ver',
+        '<controller:(entrevista|serie)>/<url:[0-9a-zA-Z_\-]+>' => 'public/<controller>/ver',
 
       ),
     ),
@@ -174,7 +171,6 @@ return array(
       'username'=>'postgres',
       'password'=>'',
       'charset'=>'utf8',
-      'enableParamLogging'=>true,
     ),
 
     'errorHandler'=>array(

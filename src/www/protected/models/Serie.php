@@ -63,7 +63,7 @@ class Serie extends DTActiveRecord {
     // NOTE: you may need to adjust the relation name and the related
     // class name for the relations automatically generated below.
     return array(
-      'capitulos' => array(self::HAS_MANY, 'Capitulo', 'serie_id'),
+      'capitulos' => array(self::HAS_MANY, 'Capitulo', 'serie_id', 'order'=>'orden DESC'),
       'portadaModel'=>array(self::HAS_ONE, 'Portada',
         array('entidad_id'=>'id'),
         'condition' => 'tabla_id = '.self::ID,

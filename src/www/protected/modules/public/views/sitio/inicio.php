@@ -34,7 +34,7 @@ Yii::app()->clientScript->registerCoreScript('slick');
     <div id="de-todo">
       <?php
       $items_portada = Portada::model()->findAll(
-        array('order'=>'fecha_edicion')
+        array('order'=>'fecha_edicion DESC')
       );
       foreach ($items_portada as $item) {
         $entidad = $item->entidad();

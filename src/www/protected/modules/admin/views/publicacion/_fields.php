@@ -194,6 +194,94 @@ if(!isset($attributes))
 
   <div class="fila">
 
+    <?php if(in_array('autor', $attributes)): ?>
+    <div class="campo">
+      <div class="label">
+      <?php echo $form->labelEx($model, 'autor'); ?>
+      </div>
+      <?php echo $form->description($model, 'autor'); ?>
+      <div class="value">
+      <?php echo $form->textField($model, 'autor', array('size'=>60, 'maxlength'=>512)); ?>
+      </div>
+      <?php echo $form->suggestion($model, 'autor'); ?>
+      <?php echo $form->error($model, 'autor'); ?>
+    </div>
+    <?php endif; ?> <br>
+
+    <?php if(in_array('isbn', $attributes)): ?>
+    <div class="campo">
+      <div class="label">
+      <?php echo $form->labelEx($model, 'isbn'); ?>
+      </div>
+      <?php echo $form->description($model, 'isbn'); ?>
+      <div class="value">
+      <?php echo $form->textField($model, 'isbn', array('size'=>32, 'maxlength'=>32)); ?>
+      </div>
+      <?php echo $form->suggestion($model, 'isbn'); ?>
+      <?php echo $form->error($model, 'isbn'); ?>
+    </div>
+    <?php endif; ?> <br>
+
+    <?php if(in_array('anio', $attributes)): ?>
+    <div class="campo">
+      <div class="label">
+      <?php echo $form->labelEx($model, 'anio'); ?>
+      </div>
+      <?php echo $form->description($model, 'anio'); ?>
+      <div class="value">
+      <?php echo $form->textField($model, 'anio', array('size'=>4, 'maxlength'=>4)); ?>
+      </div>
+      <?php echo $form->suggestion($model, 'anio'); ?>
+      <?php echo $form->error($model, 'anio'); ?>
+    </div>
+    <?php endif; ?> <br>
+
+    <?php if(in_array('editorial', $attributes)): ?>
+    <div class="campo">
+      <div class="label">
+      <?php echo $form->labelEx($model, 'editorial'); ?>
+      </div>
+      <?php echo $form->description($model, 'editorial'); ?>
+      <div class="value">
+      <?php echo $form->textField($model, 'editorial', array('size'=>60, 'maxlength'=>512)); ?>
+      </div>
+      <?php echo $form->suggestion($model, 'editorial'); ?>
+      <?php echo $form->error($model, 'editorial'); ?>
+    </div>
+    <?php endif; ?> <br>
+
+    <?php if(in_array('idioma', $attributes)): ?>
+    <div class="campo">
+      <div class="label">
+      <?php echo $form->labelEx($model, 'idioma'); ?>
+      </div>
+      <?php echo $form->description($model, 'idioma'); ?>
+      <div class="value">
+      <?php echo $form->textField($model, 'idioma', array('size'=>32, 'maxlength'=>32)); ?>
+      </div>
+      <?php echo $form->suggestion($model, 'idioma'); ?>
+      <?php echo $form->error($model, 'idioma'); ?>
+    </div>
+    <?php endif; ?> <br>
+
+    <?php if(in_array('diseno', $attributes)): ?>
+    <div class="campo">
+      <div class="label">
+      <?php echo $form->labelEx($model, 'diseno'); ?>
+      </div>
+      <?php echo $form->description($model, 'diseno'); ?>
+      <div class="value">
+      <?php echo $form->textField($model, 'diseno', array('size'=>60, 'maxlength'=>512)); ?>
+      </div>
+      <?php echo $form->suggestion($model, 'diseno'); ?>
+      <?php echo $form->error($model, 'diseno'); ?>
+    </div>
+    <?php endif; ?>
+
+  </div>
+
+  <div class="fila">
+
     <?php if(in_array('informacion', $attributes)): ?>
     <div class="campo informacion grande">
       <div class="label">
