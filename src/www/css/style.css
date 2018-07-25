@@ -58,6 +58,9 @@ h2 {
   z-index: 1;
   transition: background 200ms, box-shadow 100ms;
 }
+#header.scroll {
+  box-shadow: 0 0 0.6em -0.2em #000;
+}
 /* header oscuro */
 #header.oscuro {
   background-color: rgba(0, 0, 0, 0.8);
@@ -828,10 +831,6 @@ ul#menu li {
 }
 #contenido .relacionados header {
   margin: 2em 1em 1em;
-}
-#header.scroll {
-  background: none;
-  box-shadow: none;
 }
 
 #capitulos-serie .entrevista.item .textos,
