@@ -215,7 +215,7 @@ if(!isset($attributes))
       </div>
       <?php echo $form->description($model, 'isbn'); ?>
       <div class="value">
-      <?php echo $form->textField($model, 'isbn', array('size'=>32, 'maxlength'=>32)); ?>
+      <?php echo $form->textField($model, 'isbn', array('size'=>32, 'maxlength'=>64)); ?>
       </div>
       <?php echo $form->suggestion($model, 'isbn'); ?>
       <?php echo $form->error($model, 'isbn'); ?>

@@ -42,6 +42,15 @@ class DTActiveRecord extends ActiveRecord {
     return parent::beforeDelete();
   }
 
+  public function afterDelete()
+  {
+    $portadaModel = $this->portadaModel;
+    if ($portadaModel) {
+      $portadaModel->delete();
+    }
+    return parent::afterDelete();
+  }
+
   /**
    * Se ejecuta después de guardar.
    *

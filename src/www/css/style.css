@@ -72,6 +72,16 @@ h2 {
 #header.oscuro #menu a:hover {
   color: #FFF;
 }
+#header.blanco {
+  background-color: #FFF;
+}
+#header.blanco #menu a {
+  color: #444;
+}
+#header.blanco #menu a.activo,
+#header.blanco #menu a:hover {
+  color: #000;
+}
 /* header claro */
 #header.claro {
   background-color: rgba(255, 255, 255, 0.8);
@@ -921,6 +931,7 @@ ul#menu li {
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100%;
+  font-size: 0.9em;
 }
 .item.publicacion a .textos .puntos {
   background: #000;

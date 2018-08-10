@@ -204,15 +204,6 @@ class Noticia extends DTActiveRecord
     return parent::afterSave();
   }
 
-  public function beforeDelete()
-  {
-    $portadaModel = $this->portadaModel;
-    if ($portadaModel) {
-      $portadaModel->delete();
-    }
-    return parent::beforeDelete();
-  }
-
   public function afterDelete()
   {
     rrmdir($this->pathImagen(true));

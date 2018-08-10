@@ -70,7 +70,7 @@ class Publicacion extends DTActiveRecord {
       array('titulo, url', 'required'),
       array('portada, visor', 'numerical', 'integerOnly'=>true),
       array('autor', 'length', 'max'=>512),
-      array('isbn', 'length', 'max'=>16),
+      array('isbn', 'length', 'max'=>64),
       array('anio', 'numerical', 'min'=>1000, 'max'=>9999, 'integerOnly'=>true),
       array('editorial', 'length', 'max'=>512),
       array('idioma', 'length', 'max'=>32),
