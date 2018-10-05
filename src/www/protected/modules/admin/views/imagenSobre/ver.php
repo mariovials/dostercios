@@ -1,45 +1,34 @@
 <?php
-/* @var $this ImagenController */
-/* @var $model Imagen */
-
-$this->breadcrumbs=array(
-  'Imagens'=>array('/imagen/index'),
-  $model->id,
-);
+/* @var $this ImagenPortadaController */
+/* @var $model ImagenPortada */
 
 $this->menu = array(
-  array('label'=>'Agregar Imagen',
-    'url'=>array('/imagen/agregar'),
+  array('label'=>'Agregar Imágen Sobre Dostercios',
+    'url'=>array('/admin/imagen-sobre/agregar'),
     'linkOptions'=>array('class'=>'agregar accion'),
   ),
   array('linkOptions'=>array('class'=>'separador')),
 
-  array('label'=>'Lista de Imagens',
-    'url'=>array('/imagen'),
+  array('label'=>'Lista de Imágenes Sobre Dostercios',
+    'url'=>array('/admin/imagen-sobre'),
     'linkOptions'=>array('class'=>'lista nav'),
   ),
   array('linkOptions'=>array('class'=>'separador')),
 
-  array('label'=>'Editar Imagen',
-    'url'=>array('/imagen/editar', 'id'=>$model->id),
+  array('label'=>'Editar Imágen Sobre Dostercios',
+    'url'=>array('/admin/imagen-sobre/editar', 'id'=>$model->id),
     'linkOptions'=>array('class'=>'editar accion'),
   ),
-  array('label'=>'Eliminar Imagen',
+  array('label'=>'Eliminar Imágen Sobre Dostercios',
     'url'=>'#',
     'linkOptions'=>array('class'=>'eliminar accion',
-      'submit'=>array('/imagen/eliminar', 'id'=>$model->id),
+      'submit'=>array('/admin/imagen-sobre/eliminar', 'id'=>$model->id),
       'confirm'=>'¿Estás seguro de eliminar?'
   )),
-  array('linkOptions'=>array('class'=>'separador')),
-
-  array('label'=>'Ver en sitio',
-    'url'=>array('/imagen'),
-    'linkOptions'=>array('class'=>'ver nav'),
-  ),
 );
 ?>
 
-<div id="imagen-ver">
+<div id="imagen-sobre-ver">
 
   <div id="contenido-head">
     <h1><?php echo $model->titulo ?></h1>
@@ -50,7 +39,7 @@ $this->menu = array(
     <?php $this->renderPartial('_ficha', array(
       'model' => $model,
       'campos' => array(
-        'nombre',
+        'imagen',
       ),
     )); ?>
 

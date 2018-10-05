@@ -21,7 +21,7 @@
     {
       "path": "../dev",
       "name": "Desarrollo",
-      "folder_exclude_patterns": ["backup"]
+      "folder_exclude_patterns": ["backup", "back"]
     },
     {
       "path": "../src/www",

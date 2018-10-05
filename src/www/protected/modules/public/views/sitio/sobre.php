@@ -1,7 +1,12 @@
 <div id="sobre">
 
   <div id="portada-sobre">
-    <img src="<?php echo BASE_URL . "/img/dostercios/sobre_" . rand(1,3) . ".png"; ?>" alt="">
+
+    <?php
+    $imagenes_sobre = ImagenSobre::model()->findAll();
+    $imagen = $imagenes_sobre[mt_rand(0, count($imagenes_sobre) - 1)];
+    ?>
+    <img src="<?php echo BASE_URL . "/img/sobre/{$imagen->id}_{$imagen->imagen}"; ?>" alt="">
 
     <h1 class="titulo"><?php echo Parametro::get('nombre') ?></h1>
     <?php echo $this->renderPartial('/layouts/_social'); ?>

@@ -16,6 +16,7 @@ $hay_menu = ($this->menu);
       <li><?php echo CHtml::link('Descargas', array('/admin/descarga')) ?></li>
       <li><?php echo CHtml::link('Auspiciador', array('/admin/auspiciador')) ?></li>
       <li><?php echo CHtml::link('Parámetros', array('/admin/parametro')) ?></li>
+      <li><?php echo CHtml::link('Imágenes Sobre Dostercios', array('/admin/imagen-sobre')) ?></li>
     </ul>
   </div>
 

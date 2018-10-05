@@ -1,4 +1,6 @@
 <?php
+Yii::app()->clientScript->registerCoreScript('summernote');
+
 /**
  * @var $this ParametroController
  * @var $model Parametro
@@ -73,7 +75,13 @@ if(!isset($attributes))
       </div>
       <?php echo $form->description($model, 'valor'); ?>
       <div class="value">
-      <?php echo $form->textArea($model, 'valor', array('rows'=>6, 'cols'=>80)); ?>
+      <?php
+      if ($model->id == 5) {
+        echo $form->textArea($model, 'valor', array('rows'=>6, 'cols'=>80, 'class' => 'sobre-dostercios'));
+      } else {
+        echo $form->textArea($model, 'valor', array('rows'=>6, 'cols'=>80));
+      }
+      ?>
       </div>
       <?php echo $form->suggestion($model, 'valor'); ?>
       <?php echo $form->error($model, 'valor'); ?>
@@ -101,3 +109,31 @@ if(!isset($attributes))
   </div>
 
 </div>
+
+<?php if ($model->id == 5): ?>
+
+<script>
+  $(function() {
+
+
+  baseUrl = '<?php echo BASE_URL; ?>';
+
+    $('#Parametro_valor').summernote({
+      toolbar: [
+        ['style', ['style']],
+        ['fontname', ['fontname', 'fontsize']],
+        ['para', ['paragraph']],
+        ['font', ['bold', 'italic', 'underline', 'clear']],
+        ['height', ['height']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol']],
+        ['table', ['table']],
+        ['insert', ['link', 'hr']],
+        ['view', ['fullscreen', 'codeview']],
+        ['help', ['help']]
+      ],
+    });
+  });
+</script>
+
+<?php endif; ?>

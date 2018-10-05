@@ -142,7 +142,7 @@ return array(
       'class'=>'ext.urlManager', // para convertir separador de guion a camelCase
       'urlFormat'=>'path',
       'showScriptName'=>false,
-      'rules'=>array(
+      'rules' => array(
 
         '/inicio' => '/public',
 

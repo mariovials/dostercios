@@ -1,28 +1,27 @@
 <?php
-/* @var $this ImagenController */
+/* @var $this ImagenPortadaController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-  'Imagens',
+  'Imágenes Sobre Dostercios',
 );
 
 $this->menu = array(
-  array('label'=>'Agregar Imagen',
-    'url'=>array('/imagen/agregar'),
+  array('label'=>'Agregar Imágen Sobre Dostercios',
+    'url'=>array('/admin/imagen-sobre/agregar'),
     'linkOptions'=>array('class'=>'agregar accion')
   ),
-  array('linkOptions'=>array('class'=>'separador')),
 );
 ?>
 
-<div id="imagen-index">
+<div id="imagen-sobre-index">
 
   <div id="contenido-head">
-    <h1>Imagens</h1>
+    <h1>Imágenes Sobre Dostercios</h1>
   </div>
 
   <div id="contenido-body">
-    <div class="lista imagen admin">
+    <div class="lista imagen-sobre admin">
     <?php $this->widget('zii.widgets.CListView', array(
       'dataProvider'=>$dataProvider,
       'itemView'=>'_lista',

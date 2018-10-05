@@ -1,25 +1,25 @@
 <?php
-/* @var $this ImagenController */
-/* @var $model Imagen */
+/* @var $this ImagenPortadaController */
+/* @var $model ImagenPortada */
 
 $this->breadcrumbs=array(
-  'Imagens'=>array('/imagen/index'),
+  'Imágenes Sobre Dostercios'=>array('/admin/imagen-sobre/index'),
   'Agregar',
 );
 
 $this->menu = array(
-  array('label'=>'Lista de Imagens',
-    'url'=>array('/imagen'),
+  array('label'=>'Lista de Imágenes Sobre Dostercios',
+    'url'=>array('/admin/imagen-sobre'),
     'linkOptions'=>array('class'=>'lista nav'),
   ),
   array('linkOptions'=>array('class'=>'separador')),
 );
 ?>
 
-<div id="imagen-agregar">
+<div id="imagen-sobre-agregar">
 
   <div id="contenido-head">
-    <h1>Agregar Imagen</h1>
+    <h1>Agregar Imágen Sobre Dostercios</h1>
   </div>
 
   <div id="contenido-body">
@@ -27,7 +27,7 @@ $this->menu = array(
     <?php echo $this->renderPartial('_form', array(
       'model'=>$model,
       'attributes'=>array(
-        'nombre',
+        'imagen',
       ),
     )); ?>
 
