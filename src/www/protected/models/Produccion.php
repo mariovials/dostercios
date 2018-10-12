@@ -56,6 +56,7 @@ class Produccion extends DTActiveRecord {
       array('titulo, video, miniatura', 'length', 'max'=>2000),
       array('url, texto, fecha_publicacion, transaccion, resumen, cita, etiquetas',
         'safe'),
+      array('miniatura', 'file', 'maxSize'=>200000),
       // The following rule is used by search().
       // Please remove those attributes that should not be searched.
       array('id, titulo, texto, video, fecha_publicacion', 'safe', 'on'=>'search'),

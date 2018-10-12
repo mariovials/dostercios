@@ -4,7 +4,7 @@ $this->cargar_jquery();
 
 <div id="entrevista-index">
 
-    <div id="entrevistas">
+    <div id="entrevistas" class="lista">
       <?php foreach ($entrevistas as $entrevista) { ?>
       <div class="item entrevista proporcion2-1" style="background-image: url('<?php echo $entrevista->pathFileAttribute('miniatura') ?>'); ">
         <a href="<?php echo $entrevista->url() ?>" class="contenido">

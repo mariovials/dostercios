@@ -4,7 +4,7 @@ $this->cargar_jquery();
 
 <div id="produccion-index">
 
-    <div id="producciones">
+    <div id="producciones" class="lista">
       <?php foreach ($producciones as $produccion) {
         ?>
       <div class="item produccion entrevista proporcion2-1" style="background-image: url('<?php echo $produccion->pathFileAttribute('miniatura') ?>'); ">

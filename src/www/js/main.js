@@ -14,18 +14,21 @@ $(document).ready(function() {
   input = $('#buscador');
 
   $('#buscador-box').hover(function (e) {
-    input.addClass('hover');
+    $(this).addClass('hover');
   }, function (e) {
     cerrarInput();
   });
 
-  $('#buscador-box').on('focusout', function (e) {
-    cerrarInput();
+  $('#buscador').on('focusin', function (e) {
+    $('#buscador-box').addClass('hover');
+    $('#buscador-resultados').css("display", "block");
   });
 
   cerrarInput = function () {
     if (input.val() == '' && !input.is(':focus')) {
-      input.removeClass('hover');
+      console.log(input.val());
+      console.log(input.is(':focus'));
+      $('#buscador-box').removeClass('hover');
     }
   }
 
@@ -87,7 +90,7 @@ $(document).ready(function() {
     nuevosResultados = $(resultados).text();
     resultadosExistentes = $('#buscador-resultados ul').text();
     if (nuevosResultados != resultadosExistentes) {
-      $('#buscador-resultados').html(resultados);
+      $('#buscador-resultados').html(resultados).show();
     }
   }
 
@@ -141,108 +144,15 @@ $(document).ready(function() {
     window.location.href = url;
   }
 
-
-  /**
-   * Ajusta el título de las miniaturas de los que corresponda
-   * @author Mario Vial <mariovials@gmail.com> 2016-01-06 13:53
-   */
-  ajustarTituloAbajo = function() {
-
-    ajustarTituloAbajoItems($('.item.entrevista'));
-    ajustarTituloAbajoItems($('.item.de-todo.grande'));
-    ajustarTituloAbajoItems($('.item.de-todo').not('.grande'));
-
-  }
-
-  /**
-   * Ajusta el título de las miniaturas abajo
-   * dejando 2 lineas de titulo
-   * @param  {item} items a los que se les debe ajustar el titulo
-   * @return {void}
-   * @author Mario Vial <mariovials@gmail.com> 2016-01-06 13:50
-   */
-  ajustarTituloAbajoItems = function(items) {
-
-    if (items.length > 0) {
-
-      textos  = items.find('.textos');
-      titulos = textos.find('.titulo');
-
-      textos.css('transition', 'none');
-
-      var h  = items.css('height').replace('px', ''),
-          fz = titulos.css('font-size').replace('px', '');
-      var top = h - fz * 4.3;
-
-      textos.css({
-        'top': top + 'px',
-        'transition': 'all 500ms',
-      });
-
-    }
-
-  }
-
-  $(window).resize(function() {
-
-    ajustarTituloAbajo();
-    ajustarAltoVideo();
-
-    if (window.innerWidth < 600) {
-
-      // quita packery en portada
-      if (estaPackerizado) {
-        pack.packery('destroy');
-        estaPackerizado = false;
-      }
-
-    }
-    else {
-      if (!estaPackerizado) {
-        packeryzar();
-      }
-    }
-
-  });
-
-  var estaPackerizado = false;
-  packeryzar = function() {
-    if (window.innerWidth > 600) {
-      pack = $('#de-todo').packery();
-      estaPackerizado = true;
-    }
-  }
-
-
   $('#menu-icon').on('click', function() {
     $('#menu').toggle();
   });
 
-  ajustarAltoVideo = function() {
-    console.log('ajustarAltoVideo');
-
-    // disminuye el alto del frame contenedor de videos
-    w = $('.video-principal').width();
-    h = w * 56.25 / 100;
-    ifr = $('iframe').not($('#video-portada').children('iframe'));
-    console.dirxml(ifr);
-    console.log(h);
-    ifr.attr({
-      'height': h
-    });
-    fz = $('body').css('font-size').replace('px', '');
-    $('.video-principal').not('.publicacion').css({
-      'margin-bottom': (h + fz * 5) + 'px'
-    });
-
+  window.onclick = function(event) {
+    if (event.target.id != "buscador-box") {
+      $("#buscador-resultados").hide();
+    }
   }
-
-  init = function() {
-    ajustarTituloAbajo();
-    ajustarAltoVideo();
-  }
-
-  init();
 
 });
 

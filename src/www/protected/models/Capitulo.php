@@ -56,6 +56,7 @@ class Capitulo extends DTActiveRecord {
       array('orden', 'numerical', 'integerOnly'=>true),
       array('titulo, video, miniatura', 'length', 'max'=>2000),
       array('url, texto, resumen, fecha_publicacion, transaccion', 'safe'),
+      array('miniatura', 'file', 'maxSize'=>200000),
       // The following rule is used by search().
       // Please remove those attributes that should not be searched.
       array('id, serie_id, titulo, texto, video, fecha_publicacion, miniatura', 'safe', 'on'=>'search'),
@@ -264,7 +265,7 @@ class Capitulo extends DTActiveRecord {
 
   public function getTipoMiniatura()
   {
-    return "{$this->modelName} | Serie {$this->serie->titulo}";
+    return "{$this->modelName} {$this->orden} | Serie {$this->serie->titulo}";
   }
 
   public function pathImagen($root = false)

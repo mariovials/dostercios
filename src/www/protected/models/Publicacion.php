@@ -75,6 +75,7 @@ class Publicacion extends DTActiveRecord {
       array('editorial', 'length', 'max'=>512),
       array('idioma', 'length', 'max'=>32),
       array('diseno', 'length', 'max'=>512),
+      array('miniatura', 'file', 'maxSize'=>200000),
       array('titulo, archivo, miniatura, url', 'length', 'max'=>2000),
       array('insercion, resumen, resumen_miniatura, informacion, fecha_publicacion, etiquetas, descarga', 'safe'),
       // The following rule is used by search().

@@ -1,21 +1,25 @@
 
-<a href="<?php echo $model->serie->url(); ?>">
-  <div id="capitulo-portada-serie" style="background-image: url('<?php echo $model->serie->pathFileAttribute('image') ?>'); ">
-    <h1 class="titulo"><?php echo $model->serie->titulo ?></h1>
-  </div>
-</a>
+
+  <a class="portada-serie" href="<?php echo $model->serie->url(); ?>"
+    style="background-image: url('<?php echo $model->serie->pathFileAttribute('image') ?>');">
+    <div class="titulo">
+      <h2>Serie</h2>
+      <h1><?php echo $model->serie->titulo ?></h1>
+    </div>
+  </a>
 
 <div id="capitulo">
 
   <article>
     <header>
+      <h2>Capítulo <?php echo $model->orden; ?></h2>
       <h1><?php echo $model->titulo ?></h1>
       <?php echo $this->renderPartial('/layouts/_social_compartir', array(
         'titulo' => $model->titulo
       )); ?>
     </header>
 
-    <div class="video-principal proporcion16-9 <?php echo (!$model->video) ? 'oculto' : '' ?>">
+    <div class="video-principal <?php echo (!$model->video) ? 'oculto' : '' ?>">
       <div class="contenido">
         <?php echo $model->video ?>
       </div>
@@ -42,7 +46,7 @@
       <h2>Capítulos</h2>
     </header>
 
-    <div id="capitulos-serie">
+    <div id="capitulos-serie" class="lista">
 
       <?php
       $capitulosSiguientes = $model->getSiguientes(3);

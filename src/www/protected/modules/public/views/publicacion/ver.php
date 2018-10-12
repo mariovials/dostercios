@@ -15,7 +15,9 @@
         <iframe src="http://docs.google.com/gview?url=<?php echo Yii::app()->request->hostInfo . $model->pathFileAttribute('archivo'); ?>&embedded=true" style="width:100%; height:600px;" frameborder="0"></iframe>
         <?php elseif ($model->visor == Publicacion::EXTERNO): ?>
           <div class="video-principal publicacion">
+            <div class="contenido">
               <?php echo $model->insercion ?>
+            </div>
           </div>
         <?php endif; ?>
       </div>
@@ -104,7 +106,7 @@
 
   </article>
 
-  <aside class="relacionados">
+  <aside class="relacionados lista">
 
     <header>
       <h2>Relacionados</h2>

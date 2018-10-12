@@ -4,10 +4,10 @@
 
     <header>
       <h1><?php echo $model->titulo ?></h1>
+      <h2><?php echo $model->categoria->nombre; ?></h2>
       <?php echo $this->renderPartial('/layouts/_social_compartir', array(
         'titulo' => $model->titulo
       )); ?>
-      <h2><?php echo $model->categoria->nombre; ?></h2>
     </header>
 
     <div class="video-principal proporcion16-9 <?php echo (!$model->video) ? 'oculto' : '' ?>">
@@ -35,7 +35,7 @@
 
   </article>
 
-  <aside class="relacionados">
+  <aside class="relacionados lista">
 
     <header>
       <h2>Relacionados</h2>

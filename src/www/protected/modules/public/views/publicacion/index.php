@@ -4,22 +4,20 @@ $this->cargar_jquery();
 
 <div id="publicacion-index">
 
-    <div id="publicaciones">
+    <div id="publicaciones" class="lista">
 
       <?php foreach ($publicaciones as $publicacion) { ?>
 
-      <div class="item publicacion proporcion5-11">
-        <a href="<?php echo $publicacion->url() ?>" class="contenido">
-          <div class="portada proporcion10-13"
+      <div class="item publicacion">
+        <a href="<?php echo $publicacion->url() ?>" class="">
+          <div class="imagen"
             style="background-image: url('<?php echo $publicacion->pathFileAttribute('miniatura') ?>')">
           </div>
           <div class="textos">
-            <div class="puntos"></div>
             <div class="titulo">
               <?php echo $publicacion->titulo ?>
             </div>
             <div class="resumen">
-
               <?php if ($publicacion->autor): ?>
                 <b><?php echo $publicacion->getAttributeLabel('autor') ?></b>:
                 <?php echo $publicacion->autor ?>
@@ -50,7 +48,6 @@ $this->cargar_jquery();
                 <?php echo $publicacion->diseno ?>
                 <br>
               <?php endif; ?>
-
             </div>
           </div>
         </a>

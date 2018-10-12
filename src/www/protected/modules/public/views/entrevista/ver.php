@@ -9,7 +9,7 @@
       )); ?>
     </header>
 
-    <div class="video-principal proporcion16-9 <?php echo (!$model->video) ? 'oculto' : '' ?>">
+    <div class="video-principal <?php echo (!$model->video) ? 'oculto' : '' ?>">
       <div class="contenido">
         <?php echo $model->video ?>
       </div>
@@ -33,7 +33,7 @@
 
   </article>
 
-  <aside class="relacionados">
+  <aside class="relacionados lista">
 
     <header>
       <h2>Relacionados</h2>

@@ -1,9 +1,9 @@
 <div id="serie-index">
 
-  <div id="series">
+  <div id="series" class="lista">
     <?php foreach ($series as $serie) { ?>
-    <div class="item serie" style="background-image: url('<?php echo $serie->pathFileAttribute('image') ?>'); ">
-      <a href="<?php echo $serie->url() ?>">
+    <a href="<?php echo $serie->url() ?>" class="item serie"
+      style="background-image: url('<?php echo $serie->pathFileAttribute('image') ?>');">
       <div class="textos">
         <div class="titulo">
           <?php echo $serie->titulo ?>
@@ -12,8 +12,7 @@
           <?php echo $serie->resumen ?>
         </div>
       </div>
-      </a>
-    </div>
+    </a>
     <?php } ?>
 
   </div>

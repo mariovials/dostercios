@@ -13,7 +13,6 @@
     </button>
     <div id="logo">
       <a href="<?php echo Yii::app()->homeUrl ?>">
-        <img src="<?php echo BASE_URL ?>/img/logo_23_200x70.png" alt="Dostercios">
       </a>
     </div>
     <div id="buscador-box">
@@ -42,11 +41,6 @@
           href="<?php echo BASE_URL ?>/producciones">
           Producciones</a>
       </li>
-<!--       <li>
-        <a class="<?php echo ($this->id=='noticia') ? 'activo' : '' ?>"
-          href="<?php echo BASE_URL ?>/noticias">
-          Noticias</a>
-      </li> -->
       <li>
         <a class="<?php echo ($this->id=='publicacion') ? 'activo' : '' ?>"
           href="<?php echo BASE_URL ?>/editorial">

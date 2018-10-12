@@ -1,0 +1,24 @@
+@media (min-width: 561px) {
+
+.lista {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: dense;
+}
+.lista .item {
+}
+.lista .item.normal {
+  min-height: 9em;
+  grid-row-end: span 1;
+}
+.lista .item.grande {
+  grid-row-end: span 2;
+}
+#series {
+  display: block;
+}
+#series .item {
+  min-height: 12em;
+}
+
+}

@@ -1,4 +1,4 @@
-<div id="noticia" class="wraper">
+<div id="noticia" class="">
 
   <article>
 
@@ -27,7 +27,7 @@
 
   </article>
 
-  <aside class="relacionados">
+  <aside class="relacionados lista">
 
     <header>
       <h2>Relacionadas</h2>

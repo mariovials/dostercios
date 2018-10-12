@@ -48,6 +48,7 @@ class Serie extends DTActiveRecord {
       array('titulo', 'required'),
       array('portada','numerical', 'integerOnly'=>true, 'min'=>0, 'max'=>2),
       array('titulo, imagen', 'length', 'max'=>2000),
+      array('imagen', 'file', 'maxSize'=>600000),
       array('url, texto, resumen, fecha_publicacion, etiquetas', 'safe'),
       // The following rule is used by search().
       // Please remove those attributes that should not be searched.

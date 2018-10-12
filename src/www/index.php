@@ -4,7 +4,7 @@
  */
 
 defined('YII_ENV') or define('YII_ENV', 'dev');
-defined('YII_DEBUG') or define('YII_DEBUG', true);
+defined('YII_DEBUG') or define('YII_DEBUG', false);
 
 ini_set('post_max_size', '1000M');
 ini_set('upload_max_filesize', '1000M');

@@ -147,18 +147,22 @@ class CapituloController extends AdminController
   {
     $images_arr = array();
     $target_dir = Yii::getPathOfAlias('webroot') . "/tmp/{$transaccion}";
-    foreach($_FILES['Capitulo']['name']['imagenes'] as $key => $val){
-      $target_file = $target_dir . $_FILES['Capitulo']['name']['imagenes'][$key];
-      if(move_uploaded_file($_FILES['Capitulo']['tmp_name']['imagenes'][$key], $target_file)) {
-        $imagen = new Imagen;
-        $imagen->nombre = $val;
-        $imagen->transaccion = $transaccion;
-        if ($imagen->save()) {
-          echo '<div class="preview"><img src="'.BASE_URL."/tmp/{$transaccion}{$val}".'" alt="'.$val.'" /></div>';
-        } else {
-          D($imagen->errors);
-          header('HTTP/1.1 500 Internal Server Booboo');
+    foreach($_FILES['Capitulo']['name']['imagenes'] as $key => $val) {
+      if ($_FILES['Capitulo']['size']['imagenes'][$key] < 2000000) {
+        $target_file = $target_dir . $_FILES['Capitulo']['name']['imagenes'][$key];
+        if(move_uploaded_file($_FILES['Capitulo']['tmp_name']['imagenes'][$key], $target_file)) {
+          $imagen = new Imagen;
+          $imagen->nombre = $val;
+          $imagen->transaccion = $transaccion;
+          if ($imagen->save()) {
+            echo '<div class="preview"><img src="'.BASE_URL."/tmp/{$transaccion}{$val}".'" alt="'.$val.'" /></div>';
+          } else {
+            D($imagen->errors);
+            header('HTTP/1.1 500 Internal Server Booboo');
+          }
         }
+      } else {
+        echo D("Imagen muy grande. 2MB máximo");
       }
     }
     die();

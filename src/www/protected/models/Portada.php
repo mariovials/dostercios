@@ -183,8 +183,8 @@ class Portada extends ActiveRecord {
 
   public function tipoTexto()
   {
-    if ($this->tipo == 1) return 'proporcion2-1';
-    if ($this->tipo == 2) return 'proporcion1-1 grande';
+    if ($this->tipo == 1) return 'normal proporcion2-1';
+    if ($this->tipo == 2) return 'grande proporcion1-1';
     return '';
   }
 
