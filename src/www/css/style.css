@@ -6,9 +6,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,900,500,300,100);
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300);
 
-@import 'media_425.css';
-@import 'media_768.css';
-@import 'media_1024.css';
+@import 'media_425.css?v=1';
+@import 'media_768.css?v=1';
+@import 'media_1024.css?v=1';
 
 /**
  * Generales
