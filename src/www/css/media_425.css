@@ -25,7 +25,7 @@
 
 
 .video-principal .contenido {
-  min-height: 48vw;
+  /*min-height: 48vw;*/
 }
 .video-principal .contenido iframe {
   max-height: 74vw;

@@ -54,14 +54,30 @@ class Entrevista extends DTActiveRecord {
       array('titulo, url', 'required'),
       array('eliminarMiniatura', 'boolean'),
       array('url', 'unique'),
-      array('portada', 'numerical', 'integerOnly'=>true, 'min'=>0, 'max'=>2),
+      array('portada',
+        'numerical',
+        'integerOnly'=>true,
+        'min'=>0,
+        'max'=>2),
       array('titulo, video, miniatura', 'length', 'max'=>2000),
-      array('url, texto, fecha_publicacion, transaccion, resumen, cita, etiquetas',
+      array('url,
+        texto,
+        fecha_publicacion,
+        transaccion,
+        resumen,
+        cita,
+        etiquetas',
         'safe'),
-      array('miniatura', 'file', 'maxSize'=>200000),
+      array('miniatura',
+        'file',
+        'maxSize'=>200000,
+        'allowEmpty'=>true,
+        'on'=>'update'),
       // The following rule is used by search().
       // Please remove those attributes that should not be searched.
-      array('id, titulo, texto, video, fecha_publicacion', 'safe', 'on'=>'search'),
+      array('id, titulo, texto, video, fecha_publicacion',
+        'safe',
+        'on'=>'search'),
     );
   }
 
@@ -182,7 +198,7 @@ class Entrevista extends DTActiveRecord {
 
   public function beforeSave()
   {
-    if($this->isNewRecord && $this->fecha_publicacion == '') {
+    if ($this->isNewRecord && $this->fecha_publicacion == '') {
       $this->fecha_publicacion = date('d/m/Y');
     }
     $this->fecha_edicion = date('d/m/Y H:i:s');

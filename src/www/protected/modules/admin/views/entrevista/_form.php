@@ -28,11 +28,12 @@
     <?php echo CHtml::submitButton($model->isNewRecord ? 'Agregar' : 'Guardar',
       array('class'=>'confirmar')); ?>
     <?php
-      if($model->isNewRecord)
+      if ($model->isNewRecord) {
         echo CHtml::link('Cancelar', array('/admin/entrevista'));
-      else
+      } else {
         echo CHtml::link('Cancelar', array('/admin/entrevista/ver',
-        'id'=>$model->id));
+          'id'=>$model->id));
+      }
       ?>
   </div>
 

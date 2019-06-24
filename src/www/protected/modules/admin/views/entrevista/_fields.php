@@ -210,8 +210,7 @@ $this->cargar_js('entrevista.js');
           </div>
           <?php endif; ?>
         </div>
-        <?php echo $form->fileField($model, 'miniatura', array(
-        )); ?>
+        <?php echo $form->fileField($model, 'miniatura', array()); ?>
       </div>
       <div id="prev-miniatura"></div>
       <?php echo $form->suggestion($model, 'miniatura'); ?>

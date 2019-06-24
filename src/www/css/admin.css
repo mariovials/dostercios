@@ -81,6 +81,8 @@ section {
   float: left;
   width: 20%;
   padding: 1em 2%;
+  position: fixed;
+  right: 0;
 }
 #principal #menu-opciones h3 {
   margin: 0;

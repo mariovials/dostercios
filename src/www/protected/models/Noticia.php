@@ -57,7 +57,9 @@ class Noticia extends DTActiveRecord
       array('texto, fecha_publicacion, resumen, miniatura, transaccion,
         etiquetas',
         'safe'),
-      array('miniatura', 'file', 'maxSize'=>200000),
+      array('miniatura', 'file', 'maxSize'=>200000,
+        'allowEmpty'=>true,
+        'on'=>'update'),
       // The following rule is used by search().
       // Please remove those attributes that should not be searched.
       array('id, titulo, texto, video, fecha_publicacion, fecha_edicion, miniatura, resumen', 'safe', 'on'=>'search'),

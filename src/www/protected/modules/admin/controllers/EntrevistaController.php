@@ -75,13 +75,14 @@ class EntrevistaController extends AdminController
       $transaccion = $model->nuevaTransaccion();
     }
 
-    if(isset($_POST['Entrevista'])) {
+    if (isset($_POST['Entrevista'])) {
       if (!isset($_POST['Entrevista']['transaccion'])) {
         $transaccion = $model->nuevaTransaccion();
       }
       $model->attributes = $_POST['Entrevista'];
-      if($model->save())
+      if ($model->save()) {
         $this->redirect(array('/admin/entrevista/ver', 'id' => $model->id));
+      }
     }
 
     $this->render('agregar', array(
@@ -102,10 +103,11 @@ class EntrevistaController extends AdminController
       $transaccion = $model->nuevaTransaccion();
     }
 
-    if(isset($_POST['Entrevista'])) {
+    if (isset($_POST['Entrevista'])) {
       $model->attributes = $_POST['Entrevista'];
-      if($model->save())
+      if ($model->save()) {
         $this->redirect(array('/admin/entrevista/ver', 'id' => $model->id));
+      }
     }
 
     $this->render('editar', array(

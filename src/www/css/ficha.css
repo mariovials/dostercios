@@ -654,3 +654,7 @@ div.clear {
   width: 100%;
   vertical-align: top;
 } */
+
+.ficha > .datos > .fila > .campo.miniatura {
+  max-width: 400px;
+}

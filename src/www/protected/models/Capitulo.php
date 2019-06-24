@@ -56,7 +56,9 @@ class Capitulo extends DTActiveRecord {
       array('orden', 'numerical', 'integerOnly'=>true),
       array('titulo, video, miniatura', 'length', 'max'=>2000),
       array('url, texto, resumen, fecha_publicacion, transaccion', 'safe'),
-      array('miniatura', 'file', 'maxSize'=>200000),
+      array('miniatura', 'file', 'maxSize'=>200000,
+        'allowEmpty'=>true,
+        'on'=>'update'),
       // The following rule is used by search().
       // Please remove those attributes that should not be searched.
       array('id, serie_id, titulo, texto, video, fecha_publicacion, miniatura', 'safe', 'on'=>'search'),

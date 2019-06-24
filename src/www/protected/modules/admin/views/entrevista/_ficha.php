@@ -98,9 +98,7 @@ $this->cargar_jquery();
       <div class="campo miniatura grande">
         <div class="label"><?php echo $model->getAttributeLabel('miniatura'); ?></div>
         <div class="value grande">
-          <?php if ($model->miniatura): ?>
-          <img width="50%" src="<?php echo BASE_URL."/img/entrevista/{$model->id}/{$model->id}_{$model->miniatura}"; ?>" alt="">
-          <?php endif; ?>
+          <img width="50%" src="<?php echo $model->pathFileAttribute('miniatura'); ?>" alt="">
         </div>
       </div>
       <?php endif; ?>

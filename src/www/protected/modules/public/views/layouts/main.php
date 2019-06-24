@@ -20,7 +20,7 @@ $this->cargar_js('main.js');
     <link rel="stylesheet" href="<?php echo BASE_URL ?>/css/normalize.css">
     <link rel="stylesheet" href="<?php echo BASE_URL ?>/css/main.css">
     <link rel="stylesheet" href="<?php echo BASE_URL ?>/css/form.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL ?>/css/style.css?v3">
+    <link rel="stylesheet" href="<?php echo BASE_URL ?>/css/style.css?v=4">
 
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106890050-1"></script>

@@ -11,9 +11,11 @@
  */
 function getFile(&$model, $attribute) {
   $file = CUploadedFile::getInstance($model, $attribute);
-  if(is_object($file) && get_class($file) === 'CUploadedFile')
+  if (is_object($file) && get_class($file) === 'CUploadedFile') {
     $model->{$attribute} = $file;
-  else unset($model->{$attribute});
+  } else {
+    $model->{$attribute} = $model->oldAttributes[$attribute];
+  }
 }
 
 /**
@@ -27,21 +29,19 @@ function saveFile($model, $attribute, $path=false) {
 
   if (is_object($model->{$attribute})) {
     $file = $model->{$attribute};
-
     if (!$path) {
       $name = get_class($model) . '_' . mktime() . '_'
         . $attribute . '_' . $model->{$attribute};
       $dir = Yii::getPathOfAlias('webroot') . '/assets/images/tmp/' . $name;
       $model->{$attribute} = '/assets/images/tmp/' . $name;
     }
-    else
+    else {
       $dir = Yii::getPathOfAlias('webroot') . $path
         . $model->id . '_' . $model->{$attribute};
-
+    }
     return $file->saveAs($dir);
-
   }
-  return null;
+  // return null;
 }
 
 /**

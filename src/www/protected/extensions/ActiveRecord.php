@@ -189,10 +189,22 @@ class ActiveRecord extends CActiveRecord {
   public function beforeValidate()
   {
     foreach ($this->filesAttributes as $attribute => $path) {
-      // Requiere @file file_helper.php
       getFile($this, $attribute);
     }
     return parent::beforeValidate();
+  }
+
+  protected function afterValidate()
+  {
+    foreach ($this->filesAttributes as $attribute => $path) {
+      $file = $this->{$attribute};
+      if (is_object($file) && get_class($file) === 'CUploadedFile') {
+        // $this->{$attribute} = $file->name;
+      } else {
+        $this->{$attribute} = $this->oldAttributes[$attribute];
+      }
+    }
+    return parent::afterValidate();
   }
 
   /**
@@ -203,7 +215,6 @@ class ActiveRecord extends CActiveRecord {
   protected function beforeSave()
   {
     foreach ($this->dateAttributes as $attribute) {
-      // Requiere @file time_helper.php
       $this->{$attribute} = fiso($this->{$attribute});
     }
     return parent::beforeSave();
@@ -219,7 +230,8 @@ class ActiveRecord extends CActiveRecord {
     // Requiere @file extensions/file_helper.php
     foreach ($this->filesAttributes as $attribute => $path) {
       saveFile($this, $attribute, $path);
-      if ($this->hasChanged($attribute) && isset($this->oldAttributes[$attribute])) {
+      if ($this->hasChanged($attribute)
+        && isset($this->oldAttributes[$attribute])) {
         $path_anterior = $this->filesAttributes[$attribute]
           . $this->id . '_' . $this->oldAttributes[$attribute];
         deleteFile($path_anterior);
@@ -246,18 +258,6 @@ class ActiveRecord extends CActiveRecord {
     }
     $this->_oldAttributes = $this->attributes;
     return parent::afterFind();
-  }
-
-  protected function afterValidate()
-  {
-    if($this->hasErrors())
-      foreach ($this->filesAttributes as $attribute => $path) {
-        $file = $this->{$attribute};
-        if(is_object($file) && get_class($file) === 'CUploadedFile')
-          $this->{$attribute} = $file->name;
-        else unset($this->{$attribute});
-      }
-    return parent::afterValidate();
   }
 
   protected function beforeDelete()

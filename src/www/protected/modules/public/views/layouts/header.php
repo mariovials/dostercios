@@ -44,7 +44,7 @@
       <li>
         <a class="<?php echo ($this->id=='publicacion') ? 'activo' : '' ?>"
           href="<?php echo BASE_URL ?>/editorial">
-          Editorial</a>
+          Publicaciones</a>
       </li>
       <li>
         <a class=""

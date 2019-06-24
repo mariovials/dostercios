@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="<?php echo BASE_URL ?>/css/form.css">
     <link rel="stylesheet" href="<?php echo BASE_URL ?>/css/admin.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL ?>/css/ficha.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL ?>/css/ficha.css?v=1">
 
 <!--     <link href='http://fonts.googleapis.com/css?family=Roboto:900,500,100,300,700,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'> -->
